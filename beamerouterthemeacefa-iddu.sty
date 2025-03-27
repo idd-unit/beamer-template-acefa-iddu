@@ -1,0 +1,36 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{acefa-iddu}[1][]{
+  %% \vskip1cm%
+  \vskip0.045\paperheight
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle}%
+  \begin{tikzpicture}%
+  %% \useasboundingbox[fill=white](0,0) rectangle(\the\paperwidth,1.2);
+  \useasboundingbox[fill=white](0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \fill[acefa3] (0,0) rectangle(2.95,1.2);
+  \fill[acefa4] (3.05,0) rectangle(\the\paperwidth,1.2);
+   \ifx\insertframesubtitle\@empty%
+      {\node[anchor=west, acefa1,font=\large] at (3.2,0.61){\insertframetitle};}
+      \else%
+      {\node[anchor= west, acefa1,font=\large] at (3.2,0.81){\insertframetitle};%
+       \node[anchor= west, acefa1,font=\small] at (3.2,0.41){\insertframesubtitle};}%
+      \fi
+    % See https://tex.stackexchange.com/a/91385 for examples of using shift.
+    \coordinate (TL) at (0,0);
+    \coordinate (TR) at (\paperwidth,0);
+    \node[inner sep=0pt,anchor=north west] (acefa) at ([shift={(0.25,0.96)}]TL) {\includegraphics[width=0.152\paperwidth]{logo-acefa-reversed}};
+    \node[inner sep=0pt,anchor=north east] (iddu) at ([shift={(-0.5,0.85)}]TR) {\includegraphics[width=0.1\paperwidth]{logo-iddu}};
+  \end{tikzpicture}%
+  \end{beamercolorbox}%
+  % NOTE: ugly hack to hide larger logos from the title page background.
+  %% \vskip-0.004\paperheight%
+  %% \begin{beamercolorbox}[wd=\paperwidth,ht=1cm]{frametitle}%
+  %% \begin{tikzpicture}
+  %%   \useasboundingbox (0,0) rectangle(\the\paperwidth,0.5cm);
+  %%   \fill[color=white] (0,0) rectangle (\the\paperwidth,0.5cm);
+  %% \end{tikzpicture}
+  %% \end{beamercolorbox}
+}
+
+\mode<all>

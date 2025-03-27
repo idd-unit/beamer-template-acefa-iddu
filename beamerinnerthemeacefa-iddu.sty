@@ -1,0 +1,91 @@
+\mode<presentation>
+
+%% \setbeamertemplate{background}{
+%%   \begin{tikzpicture}
+%%     \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+%%     %% \fill[color=acefa3] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+%%     %% \fill[color=acefa2] (0,0) rectangle(2.95,1.9);
+%%     %% \fill[color=acefa4] (3.05,0) rectangle(\the\paperwidth,1.9);
+%%     \fill[color=white] (0,0.25\paperheight) rectangle (\the\paperwidth,\the\paperheight);
+%%     \fill[color=acefa3] (0,0) rectangle(2.95,0.24\paperheight);
+%%     \fill[color=acefa4] (3.05,0) rectangle(\the\paperwidth,0.24\paperheight);
+%%     \ifnum\thepage>1\relax%
+%%     \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+%%     \fi
+%%     % See https://tex.stackexchange.com/a/91385 for examples of using shift.
+%%     \coordinate (TL) at (0,\paperheight);
+%%     \coordinate (TR) at (\paperwidth,\paperheight);
+%%     % NOTE: ACEFA logo is 168.250 x 46.905, text is 22.257 mm high (47.45%)
+%%     % IDDU logo is 110.434 x 28.861, text is 22.332 mm high (77.38%)
+%%     % So for IDDU width X we have text height X * A : A = 0.2013148
+%%     % And for ACEFA width Y we have text height Y  * B : B = 0.1322853
+%%     % To match text heights we need XA = YB, so Y = XA/B = X * C : C = 1.521823
+%%     % Y =
+%%     \node[inner sep=0pt,anchor=north west] (acefa) at ([shift={(0.5,-0.50)}]TL)
+%%          {\includegraphics[width=0.38\paperwidth]{logo-acefa}};
+%%          %% {\includegraphics[width=0.25\paperwidth]{logo-acefa}};
+%%     \node[inner sep=0pt,anchor=north east] (iddu) at ([shift={(-0.5,-0.775)}]TR) {\includegraphics[width=0.25\paperwidth]{logo-iddu}};
+%%   \end{tikzpicture}
+%% }
+
+
+\newcommand{\acefaiddutitlebg}{%
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    %% \fill[color=acefa3] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+    %% \fill[color=acefa2] (0,0) rectangle(2.95,1.9);
+    %% \fill[color=acefa4] (3.05,0) rectangle(\the\paperwidth,1.9);
+    \fill[color=white] (0,0.25\paperheight) rectangle (\the\paperwidth,\the\paperheight);
+    \fill[color=acefa3] (0,0) rectangle(2.95,0.24\paperheight);
+    \fill[color=acefa4] (3.05,0) rectangle(\the\paperwidth,0.24\paperheight);
+    \ifnum\thepage>1\relax%
+    \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \fi
+    % See https://tex.stackexchange.com/a/91385 for examples of using shift.
+    \coordinate (TL) at (0,\paperheight);
+    \coordinate (TR) at (\paperwidth,\paperheight);
+    % NOTE: ACEFA logo is 168.250 x 46.905, text is 22.257 mm high (47.45%)
+    % IDDU logo is 110.434 x 28.861, text is 22.332 mm high (77.38%)
+    % So for IDDU width X we have text height X * A : A = 0.2013148
+    % And for ACEFA width Y we have text height Y  * B : B = 0.1322853
+    % To match text heights we need XA = YB, so Y = XA/B = X * C : C = 1.521823
+    % Y =
+    \node[inner sep=0pt,anchor=north west] (acefa) at ([shift={(0.5,-0.50)}]TL)
+         {\includegraphics[width=0.38\paperwidth]{logo-acefa}};
+         %% {\includegraphics[width=0.25\paperwidth]{logo-acefa}};
+    \node[inner sep=0pt,anchor=north east] (iddu) at ([shift={(-0.5,-0.775)}]TR) {\includegraphics[width=0.25\paperwidth]{logo-iddu}};
+  \end{tikzpicture}
+}
+
+\newcommand{\acefaiddutitleframe}{%
+  {
+    \usebackgroundtemplate{\acefaiddutitlebg}
+    \begin{frame}{}
+      \titlepage
+    \end{frame}
+  }
+}
+
+% Title page
+\defbeamertemplate*{title page}{acefa-iddu}[1][]{
+   \vspace{0.4\paperheight}%
+    %% \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
+   \begin{beamercolorbox}[#1]{title page header}
+     \centering
+      \usebeamerfont{title}\inserttitle\par%
+   \end{beamercolorbox}%
+   \vskip0.3\paperheight%
+   \hspace*{0.15\paperwidth}%
+   \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.1\paperwidth,#1]{author}
+     \usebeamerfont{author}\insertauthor%
+   \end{beamercolorbox}
+   \vskip\baselineskip%
+   \hspace*{0.15\paperwidth}%
+   \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.1\paperwidth,#1]{date}
+     \usebeamerfont{author}\insertdate%
+   \end{beamercolorbox}
+   \vfill
+}
+
+\mode
+<all>

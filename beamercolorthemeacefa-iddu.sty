@@ -1,0 +1,108 @@
+% ********************************************************************
+% beamercolorthemeacefa-iddu.sty
+% Rob Moss, 2023
+%
+% This package provides the "acefa-iddu" colour theme for Beamer.
+%
+% ********************************************************************
+
+\NeedsTeXFormat{LaTeX2e}
+\def \filename {beamercolorthemeacefa-iddu.sty}
+\def \filedate {2023/12/13}
+\def \fileversion {1.0}
+\ProvidesPackage{beamercolorthemeacefa-iddu}[\filedate\space
+  \fileversion\space Beamer "acefa-iddu" colour theme]
+\typeout{Package: `beamercolorthemeacefa-iddu \fileversion\space
+  <\filedate>}
+
+% ********************************************************************
+% Presentation mode
+% ********************************************************************
+
+\mode<presentation>
+
+% ********************************************************************
+% Colour palette
+% ********************************************************************
+
+% ACEFA logo colours
+\definecolor{acefa1}{HTML}{262261}
+\definecolor{acefa2}{HTML}{247aa7}
+\definecolor{acefa3}{HTML}{84b5cc}
+\definecolor{acefa4}{HTML}{ddebf0}
+
+% IDDU logo colours
+\definecolor{iddu1}{HTML}{262261}
+\definecolor{iddu2}{HTML}{27aae1}
+\definecolor{iddu3}{HTML}{662d91}
+\definecolor{iddu4}{HTML}{ee3a89}
+
+\definecolor{background}{HTML}{ffffff}  % base00
+\definecolor{background2}{HTML}{d6d6d6} % base02
+\definecolor{background3}{HTML}{d6d6d6} % base02
+\definecolor{normtext}{HTML}{4d4d4c}    % base05
+\definecolor{comment}{HTML}{8e908c}     % base03
+
+\definecolor{red}{HTML}{c82829}         % base08
+\definecolor{orange}{HTML}{f5871f}      % base09
+\definecolor{yellow}{HTML}{eab700}      % base0A
+\definecolor{green}{HTML}{718c00}       % base0B
+\definecolor{cyan}{HTML}{3e999f}        % base0C
+\definecolor{blue}{HTML}{4271ae}        % base0D
+\definecolor{violet}{HTML}{8959a8}      % base0E
+\definecolor{brown}{HTML}{a3685a}       % base0F
+
+% ********************************************************************
+% Beamer colours
+% ********************************************************************
+
+\setbeamercolor*{title page header}{fg=acefa2}
+\setbeamercolor*{author}{fg=white}
+\setbeamercolor*{date}{fg=white}
+
+\setbeamercolor{normal text}{fg=normtext,bg=background}
+\setbeamercolor{section in toc}{fg=blue,bg=background}
+\setbeamercolor{subsection in toc}{fg=green,bg=background}
+\setbeamercolor{alerted text}{fg=iddu4,bg=background3}
+
+%% Use the same colour for block titles *and* block text.
+\setbeamercolor{block title}{fg=iddu3,bg=acefa4}
+\setbeamercolor{block body}{fg=iddu3,bg=acefa4}
+\setbeamercolor{block title alerted}{fg=iddu4,bg=acefa4}
+\setbeamercolor{block body alerted}{fg=iddu4,bg=acefa4}
+\setbeamercolor{block title example}{fg=green,bg=acefa4}
+\setbeamercolor{block body example}{fg=green,bg=acefa4}
+
+\setbeamercolor{example text}{fg=green}
+\setbeamercolor{structure}{fg=red} %% Figure caption
+
+\setbeamercolor{author}{fg=normtext}
+\setbeamercolor{institute}{fg=iddu3}
+\setbeamercolor{date}{fg=iddu3}
+
+\setbeamercolor*{palette primary}{fg=yellow,bg=background}
+\setbeamercolor*{palette secondary}{fg=blue,bg=background}
+\setbeamercolor*{palette tertiary}{fg=orange,bg=background}
+\setbeamercolor*{palette quaternary}{fg=green,bg=background}
+
+\setbeamercolor*{sidebar}{fg=normtext,bg=background3}
+\setbeamercolor*{item}{fg=acefa2}
+\setbeamercolor*{enumerate item}{fg=acefa2}
+
+\setbeamercolor*{palette sidebar primary}{fg=yellow,bg=background3}
+\setbeamercolor*{palette sidebar secondary}{fg=blue,bg=background3}
+\setbeamercolor*{palette sidebar tertiary}{fg=orange,bg=background3}
+\setbeamercolor*{palette sidebar quaternary}{fg=green,bg=background3}
+
+\setbeamercolor{titlelike}{parent=pallette primary,fg=blue}
+\setbeamercolor{frametitle}{fg=blue,bg=background}
+\setbeamercolor{frametitle right}{fg=green,bg=background}
+\setbeamercolor{framesubtitle}{fg=violet}
+
+\usebeamercolor*{normal text}
+
+% ********************************************************************
+% Other modes
+% ********************************************************************
+
+\mode<all>
