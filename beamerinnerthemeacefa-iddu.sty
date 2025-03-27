@@ -67,24 +67,26 @@
 }
 
 % Title page
+% NOTE: we use TikZ here so that we can use absolute coordinates to position
+% the text blocks. Otherwise, long talk titles can push the author and date
+% information off the bottom of the slide.
 \defbeamertemplate*{title page}{acefa-iddu}[1][]{
-   \vspace{0.4\paperheight}%
-    %% \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
-   \begin{beamercolorbox}[#1]{title page header}
-     \centering
-      \usebeamerfont{title}\inserttitle\par%
-   \end{beamercolorbox}%
-   \vskip0.3\paperheight%
-   \hspace*{0.15\paperwidth}%
-   \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.1\paperwidth,#1]{author}
-     \usebeamerfont{author}\insertauthor%
-   \end{beamercolorbox}
-   \vskip\baselineskip%
-   \hspace*{0.15\paperwidth}%
-   \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.1\paperwidth,#1]{date}
-     \usebeamerfont{author}\insertdate%
-   \end{beamercolorbox}
-   \vfill
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+
+    \node[minimum width=\paperwidth,text width=0.8\paperwidth,align=center,anchor=west]
+    at (-1, 0.5\paperheight) {
+      \usebeamerfont{title}\usebeamercolor[fg]{title}%
+      \inserttitle\par%
+    };
+
+    \node[text width=0.6\paperwidth,anchor=north west]
+    at (0.175\paperwidth,0.24\paperheight) {
+      \usebeamerfont{author}\insertauthor%
+      \vskip\baselineskip%
+      \usebeamerfont{author}\usebeamercolor[fg]{date}\insertdate%
+    };
+  \end{tikzpicture}
 }
 
 \mode
