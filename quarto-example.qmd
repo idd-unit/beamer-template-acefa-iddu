@@ -1,0 +1,20 @@
+---
+title: "Example Quarto Presentation"
+author: "Rob Moss"
+date: "2025-04-01"
+
+aspectratio: 169
+theme: acefa-iddu
+
+pdf-engine: lualatex
+
+format:
+  beamer:
+    template-partials:
+      - doc-class.tex
+      - before-body.tex
+---
+
+## Hello
+
+Example slide goes here!
