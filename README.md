@@ -8,6 +8,8 @@ This theme will not work with `pdflatex`.
 
 ![Example title page](titlepage.png)
 
+![Example slide](slide.png)
+
 ## Implementation details
 
 See the following TeX StackExchange posts about Beamer themes and frame layout:
