@@ -6,6 +6,8 @@ This repository contains a Beamer theme that uses the ACEFA and IDDU branding.
 Unless you have specific requirements, you should use `lualatex` instead of `xelatex`.
 This theme will not work with `pdflatex`.
 
+![Example title page](titlepage.png)
+
 ## Implementation details
 
 See the following TeX StackExchange posts about Beamer themes and frame layout:
