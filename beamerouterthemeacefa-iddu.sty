@@ -19,8 +19,12 @@
     % See https://tex.stackexchange.com/a/91385 for examples of using shift.
     \coordinate (TL) at (0,0);
     \coordinate (TR) at (\paperwidth,0);
-    \node[inner sep=0pt,anchor=north west] (acefa) at ([shift={(0.25,0.96)}]TL) {\includegraphics[width=0.152\paperwidth]{logo-acefa-reversed}};
-    \node[inner sep=0pt,anchor=north east] (iddu) at ([shift={(-0.5,0.85)}]TR) {\includegraphics[width=0.1\paperwidth]{logo-iddu}};
+    % NOTE: we scale the logos to have the same text height and to sit on the
+    % same baseline as the frame titles.
+    \node[inner sep=0pt,anchor=north west] (acefa) at ([shift={(0.12,0.93)}]TL)
+         {\includegraphics[width=0.164\paperwidth]{logo-acefa-reversed}};
+    \node[inner sep=0pt,anchor=north east] (iddu) at ([shift={(-0.5,0.84)}]TR)
+         {\includegraphics[width=0.1\paperwidth]{logo-iddu}};
   \end{tikzpicture}%
   \end{beamercolorbox}%
   % NOTE: ugly hack to hide larger logos from the title page background.

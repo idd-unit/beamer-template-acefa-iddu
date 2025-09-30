@@ -50,9 +50,9 @@
     % And for ACEFA width Y we have text height Y  * B : B = 0.1322853
     % To match text heights we need XA = YB, so Y = XA/B = X * C : C = 1.521823
     % Y =
+    % NOTE: we scale the logos to make the acronyms have the same text height.
     \node[inner sep=0pt,anchor=north west] (acefa) at ([shift={(0.5,-0.50)}]TL)
-         {\includegraphics[width=0.38\paperwidth]{logo-acefa}};
-         %% {\includegraphics[width=0.25\paperwidth]{logo-acefa}};
+         {\includegraphics[width=0.41\paperwidth]{logo-acefa}};
     \node[inner sep=0pt,anchor=north east] (iddu) at ([shift={(-0.5,-0.775)}]TR) {\includegraphics[width=0.25\paperwidth]{logo-iddu}};
   \end{tikzpicture}
 }
